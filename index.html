@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ProWine Tokyo 2026 — Serbian Wines & Spirits</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600&family=Noto+Serif+JP:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FFFFFF;
+    --bg-soft: #F7F5F2;
+    --bg-card: #FDFCFB;
+    --heading: #6B1E2E;
+    --accent: #A0263A;
+    --text: #2C2C2C;
+    --text-light: #7A6E6E;
+    --border: #E8E0DC;
+    --gold: #B8974A;
+    --font-display: 'Cormorant Garant', Georgia, serif;
+    --font-body: 'Raleway', sans-serif;
+    --font-jp: 'Noto Serif JP', serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 0 48px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+  }
+
+  .header-brand {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+
+  .header-title {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--heading);
+    letter-spacing: 0.02em;
+  }
+
+  .header-subtitle {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--text-light);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .lang-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .lang-btn {
+    padding: 6px 16px;
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    background: var(--bg);
+    color: var(--text-light);
+    transition: all 0.2s;
+  }
+
+  .lang-btn.active {
+    background: var(--heading);
+    color: #fff;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--bg-soft);
+    border-bottom: 1px solid var(--border);
+    padding: 56px 48px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: 'セルビア';
+    font-family: var(--font-jp);
+    font-size: 9rem;
+    font-weight: 300;
+    color: var(--border);
+    position: absolute;
+    right: 48px;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 1;
+    pointer-events: none;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: 3.2rem;
+    font-weight: 300;
+    color: var(--heading);
+    line-height: 1.15;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  .hero-meta {
+    font-size: 0.78rem;
+    color: var(--text-light);
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    margin-top: 14px;
+  }
+
+  .hero-meta span {
+    display: inline-block;
+    margin-right: 24px;
+  }
+
+  .hero-meta span::before {
+    content: '— ';
+    color: var(--gold);
+  }
+
+  /* ── NAV TABS ── */
+  .exhibitor-nav {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    padding: 0 48px;
+    background: var(--bg);
+    border-bottom: 2px solid var(--border);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .exhibitor-nav::-webkit-scrollbar { display: none; }
+
+  .nav-tab {
+    padding: 18px 20px 16px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    cursor: pointer;
+    border: none;
+    background: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    white-space: nowrap;
+    transition: all 0.2s;
+    font-family: var(--font-body);
+  }
+
+  .nav-tab:hover { color: var(--accent); }
+
+  .nav-tab.active {
+    color: var(--heading);
+    border-bottom-color: var(--heading);
+  }
+
+  /* ── CONTENT ── */
+  .content-area {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 56px 48px 80px;
+  }
+
+  .exhibitor-page { display: none; }
+  .exhibitor-page.active { display: block; }
+
+  .exhibitor-header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 48px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .logo-box {
+    width: 140px;
+    height: 90px;
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    flex-shrink: 0;
+  }
+
+  .logo-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .exhibitor-title-group {}
+
+  .exhibitor-type {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .exhibitor-name {
+    font-family: var(--font-display);
+    font-size: 2.6rem;
+    font-weight: 300;
+    color: var(--heading);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+
+  .exhibitor-name-jp {
+    font-family: var(--font-jp);
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--heading);
+    margin-top: 6px;
+  }
+
+  .exhibitor-location {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-top: 10px;
+    letter-spacing: 0.06em;
+  }
+
+  /* ── BODY LAYOUT ── */
+  .exhibitor-body {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 56px;
+  }
+
+  .about-text {
+    font-size: 0.95rem;
+    line-height: 1.85;
+    color: var(--text);
+    margin-bottom: 32px;
+  }
+
+  .about-text.jp {
+    font-family: var(--font-jp);
+    font-size: 0.88rem;
+    line-height: 2;
+  }
+
+  /* ── SIDEBAR DETAILS ── */
+  .detail-card {
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 28px;
+    height: fit-content;
+  }
+
+  .detail-section {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .detail-section:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .detail-label {
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  .detail-label.jp {
+    font-family: var(--font-jp);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: none;
+  }
+
+  .detail-value {
+    font-size: 0.82rem;
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  .detail-value.jp {
+    font-family: var(--font-jp);
+    font-size: 0.8rem;
+    line-height: 1.9;
+  }
+
+  .products-list {
+    list-style: none;
+    font-size: 0.82rem;
+    line-height: 1.9;
+    color: var(--text);
+  }
+
+  .products-list li::before {
+    content: '·  ';
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .products-list.jp {
+    font-family: var(--font-jp);
+    font-size: 0.78rem;
+  }
+
+  .contact-item {
+    display: flex;
+    gap: 10px;
+    font-size: 0.8rem;
+    color: var(--text);
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+
+  .contact-icon {
+    color: var(--accent);
+    font-size: 0.85rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .contact-item a {
+    color: var(--heading);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    transition: border-color 0.2s;
+  }
+
+  .contact-item a:hover { border-color: var(--accent); }
+
+  .cert-badge {
+    display: inline-block;
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--heading);
+    border: 1px solid var(--heading);
+    padding: 3px 8px;
+    border-radius: 3px;
+    margin-right: 6px;
+    margin-top: 4px;
+  }
+
+  /* ── AWARDS SECTION ── */
+  .awards-section {
+    margin-top: 32px;
+    padding: 20px 24px;
+    background: linear-gradient(135deg, #FDF9F3, #F7F5F2);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 4px 4px 0;
+  }
+
+  .awards-label {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .awards-text {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  .awards-text.jp {
+    font-family: var(--font-jp);
+    font-style: normal;
+    font-size: 0.85rem;
+    line-height: 1.9;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--heading);
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 28px 48px;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+  }
+
+  footer strong {
+    color: rgba(255,255,255,0.9);
+    font-weight: 500;
+  }
+
+  /* ── ANIMATIONS ── */
+  .exhibitor-page.active .exhibitor-header,
+  .exhibitor-page.active .exhibitor-body {
+    animation: fadeUp 0.35s ease both;
+  }
+
+  .exhibitor-page.active .exhibitor-body {
+    animation-delay: 0.08s;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── LANG VISIBILITY ── */
+  [data-lang] { display: none; }
+  body.lang-en [data-lang="en"] { display: block; }
+  body.lang-en [data-lang="en-inline"] { display: inline; }
+  body.lang-en [data-lang="en-li"] { display: list-item; }
+  body.lang-jp [data-lang="jp"] { display: block; }
+  body.lang-jp [data-lang="jp-inline"] { display: inline; }
+  body.lang-jp [data-lang="jp-li"] { display: list-item; }
+  body.lang-en .logo-box, body.lang-jp .logo-box { display: flex; }
+  body.lang-en .exhibitor-header, body.lang-jp .exhibitor-header { display: grid; }
+  body.lang-en .exhibitor-body, body.lang-jp .exhibitor-body { display: grid; }
+  body.lang-en .detail-card, body.lang-jp .detail-card { display: block; }
+  body.lang-en .detail-section, body.lang-jp .detail-section { display: block; }
+  body.lang-en .contact-item, body.lang-jp .contact-item { display: flex; }
+  body.lang-en .awards-section, body.lang-jp .awards-section { display: block; }
+  body.lang-en .cert-badge, body.lang-jp .cert-badge { display: inline-block; }
+</style>
+</head>
+<body class="lang-en">
+
+<!-- HEADER -->
+<header>
+  <div class="header-brand">
+    <span class="header-title">ProWine Tokyo 2026</span>
+    <span class="header-subtitle">Serbian Wines &amp; Spirits</span>
+  </div>
+  <div class="lang-toggle">
+    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('jp')">日本語</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow" data-lang="en">Republic of Serbia · Official Pavilion</div>
+  <div class="hero-eyebrow" data-lang="jp">セルビア共和国・公式パビリオン</div>
+  <h1><em data-lang="en">Serbian Wines</em><em data-lang="jp">セルビアのワイン</em><br>
+    <span data-lang="en">&amp; Spirits</span><span data-lang="jp">＆スピリッツ</span>
+  </h1>
+  <div class="hero-meta">
+    <span data-lang="en">ProWine Tokyo 2026</span>
+    <span data-lang="jp">プロワイン東京2026</span>
+    <span data-lang="en">6 Exhibitors</span>
+    <span data-lang="jp">6社出展</span>
+  </div>
+</section>
+
+<!-- EXHIBITOR NAV -->
+<nav class="exhibitor-nav">
+  <button class="nav-tab active" onclick="showExhibitor('bt')">BT Winery</button>
+  <button class="nav-tab" onclick="showExhibitor('pevac')">Podrum Pevac</button>
+  <button class="nav-tab" onclick="showExhibitor('lastar')">Lastar Winery</button>
+  <button class="nav-tab" onclick="showExhibitor('zaric')">Zarić Distillery</button>
+  <button class="nav-tab" onclick="showExhibitor('zvonko')">Zvonko Bogdan</button>
+  <button class="nav-tab" onclick="showExhibitor('aleks')">Aleksandrović</button>
+</nav>
+
+<main class="content-area">
+
+  <!-- ══════════════════════════════════════════════
+       1. BT WINERY
+  ══════════════════════════════════════════════ -->
+  <div class="exhibitor-page active" id="page-bt">
+    <div class="exhibitor-header">
+      <div class="logo-box">
+        <img src="https://fairs.pks.rs/wp-content/uploads/2023/10/bt-logo.png" alt="BT Winery logo">
+      </div>
+      <div class="exhibitor-title-group">
+        <div class="exhibitor-type" data-lang="en">Winery · Fruška Gora, Vojvodina</div>
+        <div class="exhibitor-type" data-lang="jp">ワイナリー・フルシュカゴーラ、ヴォイヴォディナ</div>
+        <div class="exhibitor-name">BT Winery</div>
+        <div class="exhibitor-location" data-lang="en">📍 Kneza Milosa BB, 22324 Beška, Serbia</div>
+        <div class="exhibitor-location" data-lang="jp">📍 セルビア、ベシュカ 22324、クネザ・ミロシャ通り</div>
+      </div>
+    </div>
+    <div class="exhibitor-body">
+      <div>
+        <p class="about-text" data-lang="en">
+          We believe in our wines, because we believe in our grapes. BT Winery produces wines from grapes cultivated in our own vineyards in the very heart of Fruška Gora — where the Pannonian sun and the warm Mediterranean wind create ideal conditions for the vine. Our grandparents believed this region was something special. We prove they were not wrong.
+          <br><br>
+          We follow the most traditional and ancestral vinification methods, preserved in Fruška Gora over centuries. Five metres underground, surrounded by olive trees and vineyards, our modern wine cellar provides optimal conditions for the production and maturation of our wines.
+        </p>
+        <p class="about-text jp" data-lang="jp">
+          フルシュカ・ゴーラの自社畑で丁寧に育てられたブドウから生まれるBTワイナリーのワイン。パノニア地方の太陽と温かい地中海の風が織りなす理想的な環境の中、数世紀にわたり受け継がれてきた伝統的な醸造技術を守り続けています。<br><br>
+          オリーブの木とブドウ畑に囲まれた地下5メートルのワインセラーで、最高の熟成環境を提供しています。
+        </p>
+        <div class="awards-section">
+          <div class="awards-label" data-lang="en">Line 2 — Selekcija</div>
+          <div class="awards-label" data-lang="jp">ライン2 — セレクツィヤ</div>
+          <p class="awards-text" data-lang="en">Marslean, Pinot Noir, Vranac Gold, Vranac Silver, Longinus Cabernet Sauvignon — unfiltered, matured 2–4 years in oak barrels from the oldest vines.</p>
+          <p class="awards-text jp" data-lang="jp">マルスリーン、ピノ・ノワール、ヴラナツ・ゴールド、ヴラナツ・シルバー、ロンギヌス・カベルネ・ソーヴィニヨン — 無ろ過、2〜4年樽熟成。</p>
+        </div>
+      </div>
+      <aside>
+        <div class="detail-card">
+          <div class="detail-section">
+            <div class="detail-label" data-lang="en">Products</div>
+            <div class="detail-label jp" data-lang="jp">製品</div>
+            <ul class="products-list" data-lang="en">
+              <li>Vranac Classic</li>
+              <li>Tamjanika</li>
+              <li>Maya Rosé</li>
+              <li>Marslean</li>
+              <li>Pinot Noir</li>
+              <li>Vranac Gold / Silver</li>
+              <li>Longinus Cab. Sauvignon</li>
+            </ul>
+            <ul class="products-list jp" data-lang="jp">
+              <li>ヴラナツ クラシック</li>
+              <li>タムヤニカ</li>
+              <li>マヤ ロゼ</li>
+              <li>マルスリーン</li>
+              <li>ピノ ノワール</li>
+              <li>ヴラナツ ゴールド／シルバー</li>
+              <li>ロンギヌス カベルネ</li>
+            </ul>
+          </div>
+          <div class="detail-section">
+            <div class="detail-label" data-lang="en">Contact</div>
+            <div class="detail-label jp" data-lang="jp">連絡先</div>
+            <div class="contact-item">
+              <span class="contact-icon">📞</span>
+              <span>+381 63 400 855</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">✉️</span>
+              <a href="mailto:info@bt-winery.com">info@bt-winery.com</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">🌐</span>
+              <a href="http://www.bt-winery.com" target="_blank">bt-winery.com</a>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       2. PODRUM PEVAC
+  ══════════════════════════════════════════════ -->
+  <div class="exhibitor-page" id="page-pevac">
+    <div class="exhibitor-header">
+      <div class="logo-box">
+        <img src="https://fairs.pks.rs/wp-content/uploads/2025/03/logo-pevac.jpg" alt="Podrum Pevac logo">
+      </div>
+      <div class="exhibitor-title-group">
+        <div class="exhibitor-type" data-lang="en">Winery &amp; Distillery · Belgrade, Serbia</div>
+        <div class="exhibitor-type" data-lang="jp">ワイナリー＆蒸留所・ベオグラード</div>
+        <div class="exhibitor-name">Podrum Pevac</div>
+        <div class="exhibitor-location" data-lang="en">📍 Jelenka Mihajlovića 8/22, 11060 Belgrade, Serbia</div>
+        <div class="exhibitor-location" data-lang="jp">📍 セルビア、ベオグラード11060、イェレンカ・ミハイロヴィチャ通り8/22</div>
+      </div>
+    </div>
+    <div class="exhibitor-body">
+      <div>
+        <p class="about-text" data-lang="en">
+          Podrum Pevac is a family winery and distillery that preserves tradition while implementing modern technology — resulting in refined tastes of spirits and quality wine. Founded in 2008, today it produces over twenty flavors of spirits and liqueur in over a hundred different packages.
+          <br><br>
+          Its world-renowned premium product "Zlatni Pevac" is an aged quince brandy adorned with 23-carat edible gold leaves — a symbol of Serbian craftsmanship at its finest.
+        </p>
+        <p class="about-text jp" data-lang="jp">
+          ポドルム・ペヴァツは、伝統を守りながら最新技術を取り入れた家族経営のワイナリー＆蒸留所です。2008年の創業以来、20種類以上のスピリッツとリキュールを100種類以上のパッケージで提供しています。<br><br>
+          世界的に知られるプレミアム製品「ズラトニ・ペヴァツ」は、23カラットの食用金箔を施した熟成カリン（マルメロ）ブランデーで、セルビアの職人技の粋です。
+        </p>
+        <div class="awards-section">
+          <div class="awards-label" data-lang="en">Export Markets</div>
+          <div class="awards-label" data-lang="jp">輸出市場</div>
+          <p class="awards-text" data-lang="en">USA, Australia, Azerbaijan, Montenegro, BiH, N. Macedonia, Slovenia, Bulgaria, Germany, Austria, Switzerland, Denmark, Netherlands, France</p>
+          <p class="awards-text jp" data-lang="jp">米国、オーストラリア、アゼルバイジャン、モンテネグロ、ボスニア・ヘルツェゴビナ、北マケドニア、スロベニア、ブルガリア、ドイツ、オーストリア、スイス、デンマーク、オランダ、フランス</p>
+        </div>
+      </div>
+      <aside>
+        <div class="detail-card">
+          <div class="detail-section">
+            <div class="detail-label" data-lang="en">Spirits</div>
+            <div class="detail-label jp" data-lang="jp">スピリッツ</div>
+            <ul class="products-list" data-lang="en">
+              <li>Plum, Apricot, Quince</li>
+              <li>Pear, Grape, Raspberry</li>
+              <li>Herbal brandy, Gin, Vodka</li>
+              <li>Liqueurs (5 varieties)</li>
+            </ul>
+            <ul class="products-list jp" data-lang="jp">
+              <li>プラム、アプリコット、カリン</li>
+              <li>洋梨、グレープ、ラズベリー</li>
+              <li>ハーブブランデー、ジン、ウォッカ</li>
+              <li>リキュール（5種類）</li>
+            </ul>
+          </div>
+          <div class="detail-section">
+            <div class="detail-label" data-lang="en">Wines</div>
+            <div class="detail-label jp" data-lang="jp">ワイン</div>
+            <div class="detail-value" data-lang="en">Chardonnay, Tamjanika, Morava, Prokupac, Cab. Sauvignon, Merlot, Cab. Franc</div>
+            <div class="detail-value jp" data-lang="jp">シャルドネ、タムヤニカ、モラヴァ、プロクパツ、カベルネ・ソーヴィニヨン、メルロー、カベルネ・フラン</div>
+          </div>
+          <div class="detail-section">
+            <div class="detail-label" data-lang="en">Capacity</div>
+            <div class="detail-label jp" data-lang="jp">生産能力</div>
+            <div class="detail-value" data-lang="en">Spirits: 100,000 l/year<br>Wine: 72,000 l/year</div>
+            <div class="detail-value jp" data-lang="jp">スピリッツ：年間100,000リットル<br>ワイン：年間72,000リットル</div>
+          </div>
+          <div class="detail-section">
+            <div class="detail-label" data-lang="en">Certifications</div>
+            <div class="detail-label jp" data-lang="jp">認証</div>
+            <span class="cert-badge">HACCP</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       3. LASTAR WINERY
+  ══════════════════════════════════════════════ -->
+  <div class="exhibitor-page" id="page-lastar">
+    <div class="exhibitor-header">
+      <div class="logo-box">
+        <img src="https://fairs.pks.rs/wp-content/uploads/2024/10/lastar-logo.jpg" alt="Lastar Winery logo">
+      </div>
+      <div class="exhibitor-title-group">
+        <div class="exhibitor-type" data-lang="en">Winery · Levač Region, Central Serbia</div>
+        <div class="exhibitor-type" data-lang="jp">ワイナリー・レヴァチ地方、セルビア中部</div>
+        <div class="exhibitor-name">Lastar Winery</div>
+        <div class="exhibitor-location" data-lang="en">📍 Sekurička 30, 35263 Sekurič, Serbia</div>
+        <div class="exhibitor-location" data-lang="jp">📍 セルビア、セクリチ35263、セクリチュカ通り30</div>
+      </div>
+    </div>
+    <div class="exhibitor-body">
+      <div>
+        <p class="about-text" data-lang="en">
+          Lastar Winery builds its identity on the unique terroir of the Levač region — rich vineyard soil and a wine tradition dating back to the 16th century. Founded in 2013 with 32 hectares of vineyards, it is one of the most modern wineries in Serbia.
+          <br><br>
+          The similarity of the Levač terroir with Burgundy is no coincidence — Chardonnay and Pinot Noir deliver their finest expression here. Pinot Sofijin Izbor holds the highest Decanter rating ever given to a Serbian Pinot Noir.
+        </p>
+        <p class="about-text jp" data-lang="jp">
+          ラスタール・ワイナリーは、16世紀から続くワイン造りの伝統と豊かなテロワールを誇るレヴァチ地方に根ざしています。2013年設立、32ヘクタールの自社畑を所有するセルビア最新鋭のワイナリーの一つです。<br><br>
+          ブルゴーニュに似たテロワールでは、シャルドネとピノ・ノワールが最良の表現を見せます。「ピノ・ソフィイン・イズボル」はデカンターでセルビアのピノ・ノワール史上最高評価を獲得しています。
+        </p>
+        <div class="awards-section">
+          <div class="awards-label" data-lang="en">Awards &amp; Recognition</div>
+          <div class="awards-label" data-lang="jp">受賞歴</div>
+          <p class="awards-text" data-lang="en">Mundus Vini 2016 · Best Wine of Serbia Trophy, Mundus Vini 2020 (Sauvignon Viognier Triangl 2017) · Double Gold Medal, BIWC 2021 (Chardonnay, 95 pts)</p>
+          <p class="awards-text jp" data-lang="jp">ムンドゥス・ヴィニ2016 · ムンドゥス・ヴィニ2020セルビア最優秀ワイン賞（ソーヴィニヨン ヴィオニエ トライアングル2017） · BIWC2021 ダブルゴールドメダル（シャルドネ、95点）</p>
+        </div>
+      </div>
+      <aside>
+        <div class="detail-card">
+          <div class="detail-section">
+            <div class="detail-label" data-lang="en">Products</div>
+            <div class="detail-label jp" data-lang="jp">製品</div>
+            <div class="detail-value" data-lang="en">White, red, rosé and sparkling wine</div>
+            <div class="detail-value jp" data-lang="jp">白・赤・ロゼ・スパークリングワイン</div>
+          </div>
+          <div class="detail-section">
+            <div class="detail-label" data-lang="en">Production Capacity</div>
+            <div class="detail-label jp" data-lang="jp">生産能力</div>
+            <div class="detail-value" data-lang="en">150,000 liters / year</div>
+            <div class="detail-value jp" data-lang="jp">年間150,000リットル</div>
+          </div>
+          <div class="detail-section">
+            <div class="detail-label" data-lang="en">Export Markets</div>
+            <div class="detail-label jp" data-lang="jp">輸出市場</div>
+            <div class="detail-value" data-lang="en">Montenegro, Russia, Switzerland</div>
+            <div class="detail-value jp" data-lang="jp">モンテネグロ、ロシア、スイス</div>
+          </div>
+          <div class="detail-section">
+            <div class="detail-label" data-lang="en">Certifications</div>
+            <div class="detail-label jp" data-lang="jp">認証</div>
+            <span class="cert-badge">HACCP</span>
+            <span class="cert-badge">IFS</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       4. ZARIĆ DISTILLERY
+  ══════════════════════════════════════════════ -->
+  <div class="exhibitor-page" id="page-zaric">
+    <div class="exhibitor-header">
+      <div class="logo-box">
+        <img src="https://fairs.pks.rs/wp-content/uploads/2023/10/zaric-logo-1.png" alt="Zarić Distillery logo">
+      </div>
+      <div class="exhibitor-title-group">
+        <div class="exhibitor-type" data-lang="en">Distillery · Kosjerić, Western Serbia</div>
+        <div class="exhibitor-type" data-lang="jp">蒸留所・コスイェリチ、セルビア西部</div>
+        <div class="exhibitor-name">Zarić Distillery</div>
+        <div class="exhibitor-location" data-lang="en">📍 Maksima Markovića 42, 31260 Kosjerić, Serbia</div>
+        <div class="exhibitor-location" data-lang="jp">📍 セルビア、コスイェリチ31260、マクシマ・マルコヴィチャ通り42</div>
+      </div>
+    </div>
+    <div class="exhibitor-body">
+      <div>
+        <p class="about-text" data-lang="en">
+          Zarić Distillery was built on the premises of the once-famous "Povlen" brandy distillery. Through major investments, modern science and unwavering dedication to Serbian tradition, the Zarić family transformed it into the most modern rakija distillery in Southeast Europe.
+          <br><br>
+          With a production capacity of one million litres per year, Zarić Distillery showcases the finest fruit spirits of Serbia's Western highlands — each expression named as a poetic tribute to sensation and nature.
+        </p>
+        <p class="about-text jp" data-lang="jp">
+          ザリチ蒸留所は、かつて名高かった「ポヴレン」ブランデー蒸留所の跡地に建てられました。多大な投資と、現代の科学・技術とセルビアの伝統の融合により、東南ヨーロッパ最先端のラキヤ蒸留所へと生まれ変わりました。<br><br>
+          年間100万リットルの生産能力を誇り、セルビア西部高原の最良のフルーツスピリッツを世界へ発信しています。
+        </p>
+        <div class="awards-section">
+          <div class="awards-label" data-lang="en">Export Markets</div>
+          <div class="awards-label" data-lang="jp">輸出市場</div>
+          <p class="awards-text" data-lang="en">USA, Canada, China, Austria, Australia, Germany, Croatia, BiH, N. Macedonia, Slovenia, UK, Bulgaria, Switzerland</p>
+          <p class="awards-text jp" data-lang="jp">米国、カナダ、中国、オーストリア、オーストラリア、ドイツ、クロアチア、ボスニア・ヘルツェゴビナ、北マケドニア、スロベニア、英国、ブルガリア、スイス</p>
+        </div>
+      </div>
+      <aside>
+        <div class="detail-card">
+          <div class="detail-section">
+            <div class="detail-label" data-lang="en">Products</div>
+            <div class="detail-label jp" data-lang="jp">製品ラインナップ</div>
+            <ul class="products-list" data-lang="en">
+              <li>Kraljica – Plum brandy</li>
+              <li>Nirvana – Pear brandy</li>
+              <li>Nostalgija – Quince brandy</li>
+              <li>Opsesija – Raspberry brandy</li>
+              <li>Magija – Apricot brandy</li>
+              <li>Koketa – Cherry liqueur</li>
+              <li>Medena – Honey liqueur</li>
+            </ul>
+            <ul class="products-list jp" data-lang="jp">
+              <li>クラリツァ – プラムブランデー</li>
+              <li>ニルヴァーナ – 洋梨ブランデー</li>
+              <li>ノスタルギヤ – カリンブランデー</li>
+              <li>オプセシヤ – ラズベリーブランデー</li>
+              <li>マギヤ – アプリコットブランデー</li>
+              <li>コケタ – チェリーリキュール</li>
+              <li>メデナ – ハニーリキュール</li>
+            </ul>
+          </div>
+          <div class="detail-section">
+            <div class="detail-label" data-lang="en">Production Capacity</div>
+            <div class="detail-label jp" data-lang="jp">生産能力</div>
+            <div class="detail-value" data-lang="en">1,000,000 bottles / year</div>
+            <div class="detail-value jp" data-lang="jp">年間100万本</div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       5. ZVONKO BOGDAN WINERY
+  ══════════════════════════════════════════════ -->
+  <div class="exhibitor-page" id="page-zvonko">
+    <div class="exhibitor-header">
+      <div class="logo-box">
+        <img src="https://fairs.pks.rs/wp-content/uploads/2023/10/bogdan-logo.png" alt="Zvonko Bogdan Winery logo">
+      </div>
+      <div class="exhibitor-title-group">
+        <div class="exhibitor-type" data-lang="en">Winery · Palić, Vojvodina</div>
+        <div class="exhibitor-type" data-lang="jp">ワイナリー・パリチ、ヴォイヴォディナ</div>
+        <div class="exhibitor-name">Zvonko Bogdan Winery</div>
+        <div class="exhibitor-location" data-lang="en">📍 Josipa Kolumba 33, 24113 Palić, Serbia</div>
+        <div class="exhibitor-location" data-lang="jp">📍 セルビア、パリチ24113、ヨシパ・コルンバ通り33</div>
+      </div>
+    </div>
+    <div class="exhibitor-body">
+      <div>
+        <p class="about-text" data-lang="en">
+          More than twenty years ago, Zvonko Bogdan Winery began producing premium wines inspired by the unique microclimate of Palić lakes and the region's centuries-long grape-growing tradition. Located on the northern edge of Serbia, the winery produces wines of unmistakable international character.
+          <br><br>
+          The crown of their dedication — along with over a hundred awards — are three consecutive gold medals for signature wine Cuvée No.1 at the prestigious Decanter WWA. This is a rare distinction worldwide.
+        </p>
+        <p class="about-text jp" data-lang="jp">
+          ズヴォンコ・ボグダン・ワイナリーは、パリチ湖のユニークな微気候とヴォイヴォディナの長いブドウ栽培の伝統に着想を得て、20年以上前にプレミアムワインの生産を開始しました。<br><br>
+          100以上の受賞歴を誇り、その頂点は権威あるDecanter WWAにおける看板ワイン「キュヴェ No.1」の3年連続金メダル受賞。世界でも稀な栄誉です。
+        </p>
+        <div class="awards-section">
+          <div class="awards-label" data-lang="en">Decanter WWA — 3× Consecutive Gold · Cuvée No.1</div>
+          <div class="awards-label" data-lang="jp">デカンター WWA — キュヴェ No.1 金メダル3年連続受賞</div>
+          <p class="awards-text" data-lang="en">Export markets: Russia, Croatia, Montenegro, BiH, Austria, USA, Czech Republic, Switzerland, Germany, Denmark</p>
+          <p class="awards-text jp" data-lang="jp">輸出市場：ロシア、クロアチア、モンテネグロ、ボスニア・ヘルツェゴビナ、オーストリア、米国、チェコ共和国、スイス、ドイツ、デンマーク</p>
+        </div>
+      </div>
+      <aside>
+        <div class="detail-card">
+          <div class="detail-section">
+            <div class="detail-label" data-lang="en">Red Wines</div>
+            <div class="detail-label jp" data-lang="jp">赤ワイン</div>
+            <div class="detail-value" data-lang="en">Život teče, Cuvée No.1, Merlot</div>
+            <div class="detail-value jp" data-lang="jp">ジヴォト・テチェ、キュヴェ No.1、メルロー</div>
+          </div>
+          <div class="detail-section">
+            <div class="detail-label" data-lang="en">White Wines</div>
+            <div class="detail-label jp" data-lang="jp">白ワイン</div>
+            <div class="detail-value" data-lang="en">8 tamburaša, Pinot Blanc, Pinot Grigio, Sauvignon Blanc, Chardonnay</div>
+            <div class="detail-value jp" data-lang="jp">8タンブラシャ、ピノ・ブラン、ピノ・グリージョ、ソーヴィニヨン・ブラン、シャルドネ</div>
+          </div>
+          <div class="detail-section">
+            <div class="detail-label" data-lang="en">Rosé &amp; Sparkling</div>
+            <div class="detail-label jp" data-lang="jp">ロゼ＆スパークリング</div>
+            <div class="detail-value" data-lang="en">4 konja debela, Rosé sec, Eclater</div>
+            <div class="detail-value jp" data-lang="jp">4コーニャ・デベーラ、ロゼ・セック、エクラテール</div>
+          </div>
+          <div class="detail-section">
+            <div class="detail-label" data-lang="en">Production Capacity</div>
+            <div class="detail-label jp" data-lang="jp">生産能力</div>
+            <div class="detail-value" data-lang="en">400,000 bottles / year</div>
+            <div class="detail-value jp" data-lang="jp">年間40万本</div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       6. ALEKSANDROVIĆ WINERY
+  ══════════════════════════════════════════════ -->
+  <div class="exhibitor-page" id="page-aleks">
+    <div class="exhibitor-header">
+      <div class="logo-box">
+        <img src="https://fairs.pks.rs/wp-content/uploads/2022/10/logo-aleksandrovic.png" alt="Aleksandrović Winery logo">
+      </div>
+      <div class="exhibitor-title-group">
+        <div class="exhibitor-type" data-lang="en">Winery · Topola, Šumadija</div>
+        <div class="exhibitor-type" data-lang="jp">ワイナリー・トポラ、シュマディヤ</div>
+        <div class="exhibitor-name">Aleksandrović Winery</div>
+        <div class="exhibitor-location" data-lang="en">📍 Selo Vinča bb, 34310 Topola, Serbia</div>
+        <div class="exhibitor-location" data-lang="jp">📍 セルビア、トポラ34310、ヴィンチャ村</div>
+      </div>
+    </div>
+    <div class="exhibitor-body">
+      <div>
+        <p class="about-text" data-lang="en">
+          Aleksandrović winery is situated in Vinča, 80km south of Belgrade, with 75 hectares of vineyards and annual production of 300,000 bottles. Multiple medals at Decanter, IWSC, Mundus Vini and AWC attest to the winery's uncompromising commitment to quality.
+          <br><br>
+          Their most treasured wine is "Trijumf" — produced according to an original 1932 blend recipe received from royal cellar master Zivan Tadić, winemaker of the Karađorđević Royal House before World War II. Trijumf was once served at several European royal courts.
+        </p>
+        <p class="about-text jp" data-lang="jp">
+          アレクサンドロヴィチ・ワイナリーはベオグラードから南へ80kmのヴィンチャ村に位置し、75ヘクタールの自社畑から年間30万本のワインを生産しています。デカンター、IWSC、ムンドゥス・ヴィニ、AWCでの多数のメダルが品質への揺るぎないこだわりを証明しています。<br><br>
+          最も誇り高きワイン「トリユンフ（凱旋）」は、第二次世界大戦前にカラジョルジェヴィチ王家のセラーマスターを務めたジヴァン・タディチから受け継いだ1932年のオリジナルブレンドレシピにより造られ、かつて欧州の王室の食卓を飾りました。
+        </p>
+        <div class="awards-section">
+          <div class="awards-label" data-lang="en">Trijumf — Since 1932</div>
+          <div class="awards-label" data-lang="jp">トリユンフ — 1932年以来</div>
+          <p class="awards-text" data-lang="en">"Served at European royal courts. Today, Aleksandrović wines reflect the climate, land and terroir of Serbia's finest winegrowing territory."</p>
+          <p class="awards-text jp" data-lang="jp">欧州王室の食卓を彩った歴史的白ワイン。アレクサンドロヴィチのワインはセルビアの気候、大地、テロワールを体現しています。</p>
+        </div>
+      </div>
+      <aside>
+        <div class="detail-card">
+          <div class="detail-section">
+            <div class="detail-label" data-lang="en">Products</div>
+            <div class="detail-label jp" data-lang="jp">製品</div>
+            <div class="detail-value" data-lang="en">Sparkling &amp; still wines<br>(white, rosé, red)</div>
+            <div class="detail-value jp" data-lang="jp">スパークリング＆スティルワイン<br>（白・ロゼ・赤）</div>
+          </div>
+          <div class="detail-section">
+            <div class="detail-label" data-lang="en">Vineyards &amp; Capacity</div>
+            <div class="detail-label jp" data-lang="jp">畑面積・生産能力</div>
+            <div class="detail-value" data-lang="en">75 hectares<br>300,000 bottles / year</div>
+            <div class="detail-value jp" data-lang="jp">75ヘクタール<br>年間30万本</div>
+          </div>
+          <div class="detail-section">
+            <div class="detail-label" data-lang="en">Export Markets</div>
+            <div class="detail-label jp" data-lang="jp">輸出市場</div>
+            <div class="detail-value" data-lang="en">EU, China, <strong>Japan</strong>, Russia, USA</div>
+            <div class="detail-value jp" data-lang="jp">EU諸国、中国、<strong>日本</strong>、ロシア、米国</div>
+          </div>
+          <div class="detail-section">
+            <div class="detail-label" data-lang="en">Certifications</div>
+            <div class="detail-label jp" data-lang="jp">認証</div>
+            <span class="cert-badge">HACCP</span>
+            <span class="cert-badge">ISO</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <strong data-lang="en">ProWine Tokyo 2026 · Serbian Pavilion</strong>
+  <strong data-lang="jp">プロワイン東京2026・セルビアパビリオン</strong>
+  <br>
+  <span data-lang="en">Organized by the Chamber of Commerce and Industry of Serbia</span>
+  <span data-lang="jp">セルビア商工会議所主催</span>
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.body.className = 'lang-' + lang;
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.textContent.trim() === (lang === 'en' ? 'EN' : '日本語'));
+    });
+  }
+
+  function showExhibitor(id) {
+    document.querySelectorAll('.exhibitor-page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('page-' + id).classList.add('active');
+    event.target.classList.add('active');
+  }
+</script>
+</body>
+</html>
