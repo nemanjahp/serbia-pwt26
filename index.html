@@ -108,6 +108,19 @@
   .awards-text { font-family: var(--font-display); font-style: italic; font-size: 0.95rem; color: var(--text); line-height: 1.7; }
   .awards-text.jp { font-family: var(--font-jp); font-style: normal; font-size: 0.85rem; line-height: 1.9; }
 
+  /* ── WINE CARDS ── */
+  .wine-cards { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
+.wine-card { display: flex; flex-direction: column; gap: 3px; padding: 10px 14px; background: var(--bg); border-radius: 4px; border: 1px solid var(--border); }
+.wine-card-top { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+.wine-name { font-family: var(--font-display); font-size: 1rem; font-weight: 400; color: var(--heading); }
+.wine-type { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; flex-shrink: 0; }
+.wine-type.white { background: #F0EDE6; color: var(--text-light); }
+.wine-type.rose  { background: #F5E8E6; color: #A0525A; }
+.wine-type.red   { background: #F0E8EA; color: var(--heading); }
+.wine-card-detail { font-size: 0.73rem; color: var(--text-light); line-height: 1.5; }
+body.lang-jp .wine-card-detail { font-family: var(--font-jp); font-size: 0.7rem; }
+body.lang-jp .wine-name { font-family: var(--font-jp); font-size: 0.88rem; }
+
   /* ── PHOTO GALLERY ── */
   .gallery-section { margin-top: 40px; padding-top: 36px; border-top: 1px solid var(--border); }
   .gallery-label { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
@@ -238,12 +251,12 @@
   <p class="ov-intro-p" data-lang="en">Serbian viticulture has deep historical roots. It was Roman Emperor Probus — born in Sirmium, today's Sremska Mitrovica — who in 280 AD lifted the ban on wine production outside Italy and planted the first vineyards on the slopes of Fruška Gora. During the Nemanjić dynasty (12th–14th century), viticulture flourished across the country. Today, Serbia has over 20,000 hectares of vineyards and around 500 private registered wineries producing wines in all styles.</p>
   <p class="ov-intro-p" data-lang="en">What makes Serbian wine truly distinctive is its rich range of <strong>indigenous grape varieties</strong> — Prokupac, Tamjanika, Vranac, Morava — cultivated across nine winemaking regions from Fruška Gora and Subotica in the north to Šumadija and Župa in the south. These varieties offer flavors and aromas that are entirely new to the Japanese palate.</p>
   <p class="ov-intro-p" data-lang="en">Beyond wine, Serbia is home to <strong>Rakija</strong> — a fruit brandy distilled from plums, quinces, pears and apricots. Rakija is the cornerstone of Serbian culture and hospitality, crafted with the same dedication as the finest European spirits.</p>
-  <p class="ov-intro-p jp" data-lang="jp">セルビアのブドウ栽培の歴史は古代ローマ時代に遡ります。現在のスレムスカ・ミトロヴィツァに生まれたローマ皇帝プロブスは、280年にイタリア以外でのワイン生産禁止令を解除し、フルシュカゴーラの山腹に初めてブドウを植えました。ネマニッチ朝（12〜14世紀）の時代に栽培は全土に広まり、現在セルビアには約70,000ヘクタールのブドウ畑と約500の民間ワイナリーが存在します。</p>
+  <p class="ov-intro-p jp" data-lang="jp">セルビアのブドウ栽培の歴史は古代ローマ時代に遡ります。現在のスレムスカ・ミトロヴィツァに生まれたローマ皇帝プロブスは、280年にイタリア以外でのワイン生産禁止令を解除し、フルシュカゴーラの山腹に初めてブドウを植えました。ネマニッチ朝（12〜14世紀）の時代に栽培は全土に広まり、現在セルビアには約20,000ヘクタールのブドウ畑と約500の民間ワイナリーが存在します。</p>
   <p class="ov-intro-p jp" data-lang="jp">セルビアワインの最大の魅力は、プロクパツ、タムヤニカ、ヴラナツ、モラヴァといった<strong>固有品種</strong>の存在です。北部のフルシュカゴーラ・スボティツァから南部のシュマディヤ・ジュパまで、9つのワイン産地でのみ栽培されるこれらの品種は、日本のワイン愛好家にとってまったく新しい味わいと香りを提供します。</p>
   <p class="ov-intro-p jp" data-lang="jp">ワインだけでなく、プラム・カリン・洋梨・アプリコットを原料とするフルーツブランデー<strong>「ラキヤ」</strong>もセルビアの誇りです。ラキヤはセルビアの文化とおもてなしの象徴であり、欧州最高水準の品質を誇ります。</p>
   <div class="ov-stats">
     <div class="ov-stat">
-      <div class="ov-stat-num">6000+</div>
+      <div class="ov-stat-num">2000+</div>
       <div class="ov-stat-lbl" data-lang="en">Years of winemaking</div>
       <div class="ov-stat-lbl jp" data-lang="jp">年以上のワイン製造史</div>
     </div>
@@ -359,11 +372,101 @@
       <p class="about-text" data-lang="en">We believe in our wines, because we believe in our grapes. BT Winery produces wines from grapes cultivated in our own vineyards in the very heart of Fruška Gora — where the Pannonian sun and the warm Mediterranean wind create ideal conditions for the vine. Our grandparents believed this region was something special. We prove they were not wrong.<br><br>We follow the most traditional and ancestral vinification methods, preserved in Fruška Gora over centuries. Five metres underground, surrounded by olive trees and vineyards, our modern wine cellar provides optimal conditions for the production and maturation of our wines.</p>
       <p class="about-text jp" data-lang="jp">フルシュカ・ゴーラの自社畑で丁寧に育てられたブドウから生まれるBTワイナリーのワイン。パノニア地方の太陽と温かい地中海の風が織りなす理想的な環境の中、数世紀にわたり受け継がれてきた伝統的な醸造技術を守り続けています。<br><br>オリーブの木とブドウ畑に囲まれた地下5メートルのワインセラーで、最高の熟成環境を提供しています。</p>
       <div class="awards-section">
-        <div class="awards-label" data-lang="en">Line 2 — Selekcija</div>
-        <div class="awards-label" data-lang="jp">ライン2 — セレクツィヤ</div>
-        <p class="awards-text" data-lang="en">Marslean, Pinot Noir, Vranac Gold, Vranac Silver, Longinus Cabernet Sauvignon — unfiltered, matured 2–4 years in oak barrels from the oldest vines.</p>
-        <p class="awards-text jp" data-lang="jp">マルスリーン、ピノ・ノワール、ヴラナツ・ゴールド、ヴラナツ・シルバー、ロンギヌス・カベルネ・ソーヴィニヨン — 無ろ過、2〜4年樽熟成。</p>
+  <div class="awards-label" data-lang="en">Wines</div>
+  <div class="awards-label" data-lang="jp">ワイン</div>
+
+  <div class="wine-cards">
+
+    <div class="wine-card">
+      <div class="wine-card-top">
+        <span class="wine-name" data-lang="en">Sha Sha</span>
+        <span class="wine-name" data-lang="jp">シャシャ</span>
+        <span class="wine-type white" data-lang="en">White</span>
+        <span class="wine-type white" data-lang="jp">白</span>
       </div>
+      <div class="wine-card-detail" data-lang="en">Green apple, pear, citrus · partial oak aging</div>
+      <div class="wine-card-detail" data-lang="jp">青リンゴ、洋梨、柑橘 · 一部樽熟成</div>
+    </div>
+
+    <div class="wine-card">
+      <div class="wine-card-top">
+        <span class="wine-name" data-lang="en">Miss Tamjanika</span>
+        <span class="wine-name" data-lang="jp">ミス・タムヤニカ</span>
+        <span class="wine-type white" data-lang="en">White</span>
+        <span class="wine-type white" data-lang="jp">白</span>
+      </div>
+      <div class="wine-card-detail" data-lang="en">100% Tamjanika · 12% alc · inox aged</div>
+      <div class="wine-card-detail" data-lang="jp">タムヤニカ100% · アルコール12% · ステンレスタンク熟成</div>
+    </div>
+
+    <div class="wine-card">
+      <div class="wine-card-top">
+        <span class="wine-name" data-lang="en">Tam Tam Tamjanika</span>
+        <span class="wine-name" data-lang="jp">タムタム・タムヤニカ</span>
+        <span class="wine-type white" data-lang="en">White</span>
+        <span class="wine-type white" data-lang="jp">白</span>
+      </div>
+      <div class="wine-card-detail" data-lang="en">100% Tamjanika · 12% alc · inox aged</div>
+      <div class="wine-card-detail" data-lang="jp">タムヤニカ100% · アルコール12% · ステンレスタンク熟成</div>
+    </div>
+
+    <div class="wine-card">
+      <div class="wine-card-top">
+        <span class="wine-name" data-lang="en">Teodora Rosé</span>
+        <span class="wine-name" data-lang="jp">テオドラ・ロゼ</span>
+        <span class="wine-type rose" data-lang="en">Rosé</span>
+        <span class="wine-type rose" data-lang="jp">ロゼ</span>
+      </div>
+      <div class="wine-card-detail" data-lang="en">100% Aleatico · 14% alc · inox aged</div>
+      <div class="wine-card-detail" data-lang="jp">アレアティコ100% · アルコール14% · ステンレスタンク熟成</div>
+    </div>
+
+    <div class="wine-card">
+      <div class="wine-card-top">
+        <span class="wine-name" data-lang="en">PiNo – Pinot Noir</span>
+        <span class="wine-name" data-lang="jp">ピノ – ピノ・ノワール</span>
+        <span class="wine-type red" data-lang="en">Red</span>
+        <span class="wine-type red" data-lang="jp">赤</span>
+      </div>
+      <div class="wine-card-detail" data-lang="en">100% Pinot Noir · 14% alc · barrique 12 months</div>
+      <div class="wine-card-detail" data-lang="jp">ピノ・ノワール100% · アルコール14% · バリック12ヶ月熟成</div>
+    </div>
+
+    <div class="wine-card">
+      <div class="wine-card-top">
+        <span class="wine-name" data-lang="en">Mister Marselan</span>
+        <span class="wine-name" data-lang="jp">ミスター・マルスラン</span>
+        <span class="wine-type red" data-lang="en">Red</span>
+        <span class="wine-type red" data-lang="jp">赤</span>
+      </div>
+      <div class="wine-card-detail" data-lang="en">100% Marselan · 14.5% alc · barrique 18 months · Decanter 95pts (2018 &amp; 2021)</div>
+      <div class="wine-card-detail" data-lang="jp">マルスラン100% · アルコール14.5% · バリック18ヶ月熟成 · デカンター95点（2018・2021年）</div>
+    </div>
+
+    <div class="wine-card">
+      <div class="wine-card-top">
+        <span class="wine-name" data-lang="en">Casa De Oro</span>
+        <span class="wine-name" data-lang="jp">カサ・デ・オロ</span>
+        <span class="wine-type red" data-lang="en">Red</span>
+        <span class="wine-type red" data-lang="jp">赤</span>
+      </div>
+      <div class="wine-card-detail" data-lang="en">100% Prokupac · 13% alc · barrique 12 months</div>
+      <div class="wine-card-detail" data-lang="jp">プロクパツ100% · アルコール13% · バリック12ヶ月熟成</div>
+    </div>
+
+    <div class="wine-card">
+      <div class="wine-card-top">
+        <span class="wine-name" data-lang="en">President Vranac</span>
+        <span class="wine-name" data-lang="jp">プレジデント・ヴラナツ</span>
+        <span class="wine-type red" data-lang="en">Red</span>
+        <span class="wine-type red" data-lang="jp">赤</span>
+      </div>
+      <div class="wine-card-detail" data-lang="en">100% Vranac · 14.5% alc · French oak 12 months</div>
+      <div class="wine-card-detail" data-lang="jp">ヴラナツ100% · アルコール14.5% · フレンチオーク12ヶ月熟成</div>
+    </div>
+
+  </div>
+</div>
       <div class="gallery-section">
         <div class="gallery-label" data-lang="en">Gallery</div>
         <div class="gallery-label jp" data-lang="jp">ギャラリー</div>
@@ -378,27 +481,60 @@
     </div>
     <aside>
       <div class="detail-card">
-        <div class="detail-section">
-          <div class="detail-label" data-lang="en">Products</div>
-          <div class="detail-label jp" data-lang="jp">製品</div>
-          <ul class="products-list" data-lang="en">
-            <li>Vranac Classic</li><li>Tamjanika</li><li>Maya Rosé</li>
-            <li>Marslean</li><li>Pinot Noir</li>
-            <li>Vranac Gold / Silver</li><li>Longinus Cab. Sauvignon</li>
-          </ul>
-          <ul class="products-list jp" data-lang="jp">
-            <li>ヴラナツ クラシック</li><li>タムヤニカ</li><li>マヤ ロゼ</li>
-            <li>マルスリーン</li><li>ピノ ノワール</li>
-            <li>ヴラナツ ゴールド／シルバー</li><li>ロンギヌス カベルネ</li>
-          </ul>
-        </div>
-        <div class="detail-section">
-          <div class="detail-label" data-lang="en">Contact</div>
-          <div class="detail-label jp" data-lang="jp">連絡先</div>
-          <div class="contact-item"><span class="contact-icon">📱</span><span>+381 63 400 855</span></div>
-          <div class="contact-item"><span class="contact-icon">✉️</span><a href="mailto:info@bt-winery.com">info@bt-winery.com</a></div>
-          <div class="contact-item"><span class="contact-icon">🌐</span><a href="http://www.bt-winery.com" target="_blank">bt-winery.com</a></div>
-        </div>
+  <div class="detail-section">
+    <div class="detail-label" data-lang="en">Terroir</div>
+    <div class="detail-label jp" data-lang="jp">テロワール</div>
+    <div class="detail-value" data-lang="en">
+      <strong>Fruška Gora</strong>, Vojvodina<br>
+      Pannonian sea-origin soil — rich in minerals, marl and sandstone<br><br>
+      Warm Pannonian sun · Mediterranean wind influence · ideal ripening conditions
+    </div>
+    <div class="detail-value jp" data-lang="jp">
+      <strong>フルシュカ・ゴーラ</strong>、ヴォイヴォディナ<br>
+      パノニア海起源の土壌 — ミネラル豊富、泥灰岩と砂岩<br><br>
+      パノニアの太陽 · 地中海の風の影響 · 理想的な成熟条件
+    </div>
+  </div>
+  <div class="detail-section">
+    <div class="detail-label" data-lang="en">Viticulture</div>
+    <div class="detail-label jp" data-lang="jp">栽培方法</div>
+    <div class="detail-value" data-lang="en">
+      Own vineyards only<br>
+      Low yield — grapes left on vines as long as possible<br>
+      Multiple clones per variety<br>
+      Natural cultivation methods
+    </div>
+    <div class="detail-value jp" data-lang="jp">
+      自社畑のブドウのみ使用<br>
+      低収量 — 完熟まで長期間樹上で成熟<br>
+      品種ごとに複数クローンを栽培<br>
+      自然農法
+    </div>
+  </div>
+  <div class="detail-section">
+    <div class="detail-label" data-lang="en">Winemaking</div>
+    <div class="detail-label jp" data-lang="jp">醸造</div>
+    <div class="detail-value" data-lang="en">
+      Cellar 5m underground<br>
+      Line 1 — inox aged (1 year)<br>
+      Line 2 — barrique aged (2–4 years)<br>
+      Unfiltered (premium line)
+    </div>
+    <div class="detail-value jp" data-lang="jp">
+      地下5mのワインセラー<br>
+      ライン1 — ステンレスタンク熟成（1年）<br>
+      ライン2 — バリック熟成（2〜4年）<br>
+      無ろ過（プレミアムライン）
+    </div>
+  </div>
+  <div class="detail-section">
+    <div class="detail-label" data-lang="en">Contact</div>
+    <div class="detail-label jp" data-lang="jp">連絡先</div>
+    <div class="contact-item"><span class="contact-icon">📱</span><span>+381 63 400 855</span></div>
+    <div class="contact-item"><span class="contact-icon">✉️</span><a href="mailto:info@bt-winery.com">info@bt-winery.com</a></div>
+    <div class="contact-item"><span class="contact-icon">🌐</span><a href="https://bt-winery.com" target="_blank">bt-winery.com</a></div>
+  </div>
+</div>
       </div>
     </aside>
   </div>
@@ -531,8 +667,8 @@
         <div class="detail-section">
           <div class="detail-label" data-lang="en">Export Markets</div>
           <div class="detail-label jp" data-lang="jp">輸出市場</div>
-          <div class="detail-value" data-lang="en">Montenegro, Russia, Switzerland</div>
-          <div class="detail-value jp" data-lang="jp">モンテネグロ、ロシア、スイス</div>
+          <div class="detail-value" data-lang="en">Montenegro, Poland, Japan</div>
+          <div class="detail-value jp" data-lang="jp">モンテネグロ、ポーランド、日本</div>
         </div>
         <div class="detail-section">
           <div class="detail-label" data-lang="en">Certifications</div>
@@ -616,7 +752,7 @@
           <div class="detail-label" data-lang="en">Contact</div>
           <div class="detail-label jp" data-lang="jp">連絡先</div>
           <div class="contact-item"><span class="contact-icon">📞</span><span>+381 63 222 240</span></div>
-          <div class="contact-item"><span class="contact-icon">✉️</span><a href="mailto:milan.zaric@gmail.com">milan.zaric@gmail.com</a></div>
+          <div class="contact-item"><span class="contact-icon">✉️</span><a href="mailto:milan@destilerijazaric.com">milan@destilerijazaric.com</a></div>
           <div class="contact-item"><span class="contact-icon">🌐</span><a href="https://www.destilerijazaric.com" target="_blank">destilerijazaric.com</a></div>
         </div>
       </div>
@@ -710,8 +846,8 @@
   </div>
   <div class="exhibitor-body">
     <div>
-      <p class="about-text" data-lang="en">Aleksandrović winery is situated in Vinča, 80km south of Belgrade, with 75 hectares of vineyards and annual production of 300,000 bottles. Multiple medals at Decanter, IWSC, Mundus Vini and AWC attest to the winery's uncompromising commitment to quality.<br><br>Their most treasured wine is "Trijumf" — produced according to an original 1932 blend recipe received from royal cellar master Zivan Tadić, winemaker of the Karađorđević Royal House before World War II. Trijumf was once served at several European royal courts.</p>
-      <p class="about-text jp" data-lang="jp">アレクサンドロヴィチ・ワイナリーはベオグラードから南へ80kmのヴィンチャ村に位置し、75ヘクタールの自社畑から年間30万本のワインを生産しています。デカンター、IWSC、ムンドゥス・ヴィニ、AWCでの多数のメダルが品質への揺るぎないこだわりを証明しています。<br><br>最も誇り高きワイン「トリユンフ（凱旋）」は、第二次世界大戦前にカラジョルジェヴィチ王家のセラーマスターを務めたジヴァン・タディチから受け継いだ1932年のオリジナルブレンドレシピにより造られ、かつて欧州の王室の食卓を飾りました。</p>
+      <p class="about-text" data-lang="en">Aleksandrović winery is situated in Vinča, 80km south of Belgrade, with 95 hectares of vineyards and annual production of 300,000 bottles. Multiple medals at Decanter, IWSC, Mundus Vini and AWC attest to the winery's uncompromising commitment to quality.<br><br>Their most treasured wine is "Trijumf" — produced according to an original 1932 blend recipe received from royal cellar master Zivan Tadić, winemaker of the Karađorđević Royal House before World War II. Trijumf was once served at several European royal courts.</p>
+      <p class="about-text jp" data-lang="jp">アレクサンドロヴィチ・ワイナリーはベオグラードから南へ80kmのヴィンチャ村に位置し、95ヘクタールの自社畑から年間30万本のワインを生産しています。デカンター、IWSC、ムンドゥス・ヴィニ、AWCでの多数のメダルが品質への揺るぎないこだわりを証明しています。<br><br>最も誇り高きワイン「トリユンフ（凱旋）」は、第二次世界大戦前にカラジョルジェヴィチ王家のセラーマスターを務めたジヴァン・タディチから受け継いだ1932年のオリジナルブレンドレシピにより造られ、かつて欧州の王室の食卓を飾りました。</p>
       <div class="awards-section">
         <div class="awards-label" data-lang="en">Trijumf — Since 1932</div>
         <div class="awards-label" data-lang="jp">トリユンフ — 1932年以来</div>
@@ -742,8 +878,8 @@
         <div class="detail-section">
           <div class="detail-label" data-lang="en">Vineyards &amp; Capacity</div>
           <div class="detail-label jp" data-lang="jp">畑面積・生産能力</div>
-          <div class="detail-value" data-lang="en">75 hectares<br>300,000 bottles / year</div>
-          <div class="detail-value jp" data-lang="jp">75ヘクタール<br>年間30万本</div>
+          <div class="detail-value" data-lang="en">95 hectares<br>300,000 bottles / year</div>
+          <div class="detail-value jp" data-lang="jp">95ヘクタール<br>年間30万本</div>
         </div>
         <div class="detail-section">
           <div class="detail-label" data-lang="en">Export Markets</div>
